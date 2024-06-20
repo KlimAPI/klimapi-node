@@ -586,7 +586,7 @@ export class ObjectKlimApi {
      * Get Order
      * @param param the request object
      */
-    public getOrderWithHttpInfo(param: KlimApiGetOrderRequest, options?: Configuration): Promise<HttpInfo<Array<Order>>> {
+    public getOrderWithHttpInfo(param: KlimApiGetOrderRequest, options?: Configuration): Promise<HttpInfo<Order>> {
         return this.api.getOrderWithHttpInfo(param.orderId, param.X_LOCALE,  options).toPromise();
     }
 
@@ -595,7 +595,7 @@ export class ObjectKlimApi {
      * Get Order
      * @param param the request object
      */
-    public getOrder(param: KlimApiGetOrderRequest, options?: Configuration): Promise<Array<Order>> {
+    public getOrder(param: KlimApiGetOrderRequest, options?: Configuration): Promise<Order> {
         return this.api.getOrder(param.orderId, param.X_LOCALE,  options).toPromise();
     }
 

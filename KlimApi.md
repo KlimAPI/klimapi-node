@@ -362,7 +362,7 @@ klimapi.getMetrics({
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **getOrder**
-> Array<Order> getOrder()
+> Order getOrder()
 
 Here you can request information about a specific Order.
 

@@ -183,7 +183,7 @@ export class PromiseKlimApi {
      * @param orderId You can get the order_id from several endpoints, for example when creating an Order.
      * @param X_LOCALE 
      */
-    public getOrderWithHttpInfo(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<HttpInfo<Array<Order>>> {
+    public getOrderWithHttpInfo(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<HttpInfo<Order>> {
         const result = this.api.getOrderWithHttpInfo(orderId, X_LOCALE, _options);
         return result.toPromise();
     }
@@ -194,7 +194,7 @@ export class PromiseKlimApi {
      * @param orderId You can get the order_id from several endpoints, for example when creating an Order.
      * @param X_LOCALE 
      */
-    public getOrder(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<Array<Order>> {
+    public getOrder(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<Order> {
         const result = this.api.getOrder(orderId, X_LOCALE, _options);
         return result.toPromise();
     }

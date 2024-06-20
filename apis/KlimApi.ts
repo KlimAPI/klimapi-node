@@ -1671,13 +1671,13 @@ export class KlimApiResponseProcessor {
      * @params response Response returned by the server for a request to getOrder
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async getOrderWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<Order> >> {
+     public async getOrderWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Order >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<Order> = ObjectSerializer.deserialize(
+            const body: Order = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<Order>", ""
-            ) as Array<Order>;
+                "Order", ""
+            ) as Order;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1689,10 +1689,10 @@ export class KlimApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<Order> = ObjectSerializer.deserialize(
+            const body: Order = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<Order>", ""
-            ) as Array<Order>;
+                "Order", ""
+            ) as Order;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

@@ -265,7 +265,7 @@ export class ObservableKlimApi {
      * @param orderId You can get the order_id from several endpoints, for example when creating an Order.
      * @param X_LOCALE 
      */
-    public getOrderWithHttpInfo(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Observable<HttpInfo<Array<Order>>> {
+    public getOrderWithHttpInfo(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Observable<HttpInfo<Order>> {
         const requestContextPromise = this.requestFactory.getOrder(orderId, X_LOCALE, _options);
 
         // build promise chain
@@ -290,8 +290,8 @@ export class ObservableKlimApi {
      * @param orderId You can get the order_id from several endpoints, for example when creating an Order.
      * @param X_LOCALE 
      */
-    public getOrder(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Observable<Array<Order>> {
-        return this.getOrderWithHttpInfo(orderId, X_LOCALE, _options).pipe(map((apiResponse: HttpInfo<Array<Order>>) => apiResponse.data));
+    public getOrder(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Observable<Order> {
+        return this.getOrderWithHttpInfo(orderId, X_LOCALE, _options).pipe(map((apiResponse: HttpInfo<Order>) => apiResponse.data));
     }
 
     /**

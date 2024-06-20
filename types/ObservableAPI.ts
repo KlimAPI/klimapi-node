@@ -1,5 +1,5 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
-import { Configuration} from '../configuration'
+import { Configuration, createConfiguration } from '../configuration'
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
 import { AddWebhookRequest } from '../models/AddWebhookRequest';
@@ -48,12 +48,29 @@ export class ObservableKlimApi {
     private configuration: Configuration;
 
     public constructor(
-        configuration: Configuration,
+        apiKey: string,
+        configuration?: Configuration,
         requestFactory?: KlimApiRequestFactory,
         responseProcessor?: KlimApiResponseProcessor
     ) {
-        this.configuration = configuration;
-        this.requestFactory = requestFactory || new KlimApiRequestFactory(configuration);
+        if (!configuration) {
+            this.configuration = createConfiguration({
+                authMethods: {
+                    apiKey: apiKey,
+                }
+            });
+        } else {
+            this.configuration = createConfiguration({
+                baseServer: configuration.baseServer,
+                httpApi: configuration.httpApi,
+                middleware: configuration.middleware,
+                authMethods: {
+                    apiKey: apiKey,
+                }
+            });
+        }
+
+        this.requestFactory = requestFactory || new KlimApiRequestFactory(this.configuration);
         this.responseProcessor = responseProcessor || new KlimApiResponseProcessor();
     }
 

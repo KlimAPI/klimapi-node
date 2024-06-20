@@ -11,15 +11,9 @@ For more information, please visit [https://klimapi.com/resources/docs](https://
 ## Setup new API Instance
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 ```
 
 ## Methods

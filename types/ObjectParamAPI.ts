@@ -469,8 +469,8 @@ export interface KlimApiSyncStoreRequest {
 export class ObjectKlimApi {
     private api: ObservableKlimApi
 
-    public constructor(configuration: Configuration, requestFactory?: KlimApiRequestFactory, responseProcessor?: KlimApiResponseProcessor) {
-        this.api = new ObservableKlimApi(configuration, requestFactory, responseProcessor);
+    public constructor(apiKey: string, configuration?: Configuration, requestFactory?: KlimApiRequestFactory, responseProcessor?: KlimApiResponseProcessor) {
+        this.api = new ObservableKlimApi(apiKey, configuration, requestFactory, responseProcessor);
     }
 
     /**

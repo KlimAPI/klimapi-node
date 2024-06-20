@@ -40,15 +40,9 @@ Add a new Webhook to an integration. The webhook will be triggered by the given 
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.addWebhook({
     // AddWebhookRequest
@@ -91,15 +85,9 @@ klimapi.addWebhook({
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.calculate({
     // CalculateRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
@@ -145,15 +133,9 @@ klimapi.calculate({
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.calculateCart({
     // Array<CartItem>
@@ -220,15 +202,9 @@ Use the method to get all activated categories for the given API key.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getCategories({
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
@@ -266,15 +242,9 @@ Use this endpoint to get all external certification authorities we are using for
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getCertificationAuthorities().then((data) => {
     console.log('API called successfully. Returned data: ');
@@ -309,15 +279,9 @@ Get metrics to all orders
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getMetrics({
     // GetMetricsRequest | 
@@ -368,15 +332,9 @@ Here you can request information about a specific Order.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getOrder({
     // string | You can get the order_id from several endpoints, for example when creating an Order.
@@ -417,15 +375,9 @@ Query all orders
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getOrders({
     // GetOrdersRequest | 
@@ -481,15 +433,9 @@ Here you can request information about a specific Checkout Link.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getPaymentLink({
     // string
@@ -530,15 +476,9 @@ Here you can request information to every project in our database.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getProject({
     // string | You can get the project_id from several endpoints, for example when creating an Order.
@@ -579,15 +519,9 @@ Get all projects you supported with the given API key.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.getProjects({
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
@@ -626,15 +560,9 @@ klimapi.getProjects({
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.linkByCalculation({
     // LinkByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
@@ -691,15 +619,9 @@ Get the compensation instantly by kilogram CO2e.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.linkByCarbon({
     // LinkByCarbonRequest (optional)
@@ -752,15 +674,9 @@ Get the compensation instantly by price.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.linkByPrice({
     // LinkByPriceRequest (optional)
@@ -813,15 +729,9 @@ Get Information about the Authenticated User, the Integration and the given API 
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.me().then((data) => {
     console.log('API called successfully. Returned data: ');
@@ -856,15 +766,9 @@ klimapi.me().then((data) => {
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.orderByCalculation({
     // OrderByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
@@ -922,15 +826,9 @@ Get the compensation instantly by kilogram CO2e. For this route the API key has 
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.orderByCarbon({
     // BuyAmount (optional)
@@ -984,15 +882,9 @@ Get the compensation instantly by price. For this route the API key has no limit
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.orderByPrice({
     // BuyPrice (optional)
@@ -1044,15 +936,9 @@ klimapi.orderByPrice({
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.pendingByCalculation({
     // PendingByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
@@ -1106,15 +992,9 @@ Here you can create an Order by kilogram CO2e. Please note the request limits of
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.pendingByCarbon({
     // PendingByCarbonRequest
@@ -1165,15 +1045,9 @@ Here you can create an Order by price. Please note the request limits of your AP
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.pendingByPrice({
     // PendingByPriceRequest
@@ -1224,15 +1098,9 @@ You accepted the given order. You may now show a confirmation or provide the lin
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.process({
     // ProcessOrder
@@ -1282,15 +1150,9 @@ klimapi.process({
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.processCart({
     // ProcessOrder
@@ -1342,15 +1204,9 @@ klimapi.processCart({
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.refund({
     // string | The order id specified in the Order
@@ -1389,15 +1245,9 @@ Remove a Webhook from an integration.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.removeWebhook({
     // AddWebhookRequest
@@ -1440,15 +1290,9 @@ Use the method to sync multiple products from the given store to our database.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.syncBulkStore({
     // Array<Product>
@@ -1509,15 +1353,9 @@ Use the method to sync a single product from the given store to our database.
 
 
 ```typescript
-const KlimAPI = require('@klimapi/klimapi-node');
+const { KlimApi } = require('@klimapi/klimapi-node');
 
-const config = KlimAPI.createConfiguration({
-    authMethods: {
-        apiKey: 'test-key',
-    }
-});
-
-const klimapi = new KlimAPI.KlimApi(config);
+const klimapi = new KlimApi('your-private-api-key');
 
 klimapi.syncStore({
     // Product

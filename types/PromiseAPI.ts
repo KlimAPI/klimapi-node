@@ -46,11 +46,12 @@ export class PromiseKlimApi {
     private api: ObservableKlimApi
 
     public constructor(
+        apiKey: string,
         configuration: Configuration,
         requestFactory?: KlimApiRequestFactory,
         responseProcessor?: KlimApiResponseProcessor
     ) {
-        this.api = new ObservableKlimApi(configuration, requestFactory, responseProcessor);
+        this.api = new ObservableKlimApi(apiKey, configuration, requestFactory, responseProcessor);
     }
 
     /**

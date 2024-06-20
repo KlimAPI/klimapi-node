@@ -29,7 +29,7 @@ export class BuyPrice {
     /**
     * Add additional queryable information to the order as key-value pairs
     */
-    'metadata'?: Array<{ [key: string]: any; }>;
+    'metadata'?: { [key: string]: string; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -61,7 +61,7 @@ export class BuyPrice {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "Array<{ [key: string]: any; }>",
+            "type": "{ [key: string]: string; }",
             "format": ""
         }    ];
 

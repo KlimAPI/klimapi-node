@@ -16,7 +16,7 @@ export class GetOrdersRequestFilters {
     /**
     * Add additional queryable information to the order as key-value pairs
     */
-    'metadata'?: Array<{ [key: string]: any; }>;
+    'metadata'?: { [key: string]: string; };
     /**
     * The status of the orders you want to receive
     */
@@ -48,7 +48,7 @@ export class GetOrdersRequestFilters {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "Array<{ [key: string]: any; }>",
+            "type": "{ [key: string]: string; }",
             "format": ""
         },
         {

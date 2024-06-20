@@ -21,7 +21,7 @@ export class PendingByCalculationRequest {
     /**
     * Add additional queryable information to the order as key-value pairs
     */
-    'metadata'?: Array<{ [key: string]: any; }>;
+    'metadata'?: { [key: string]: string; };
     /**
     * Normally, the calculation results are rounded to the nearest whole number. Specify here how many decimal places you would like to receive in addition. This only applies to calculation results, compensations are always made in whole kilograms
     */
@@ -45,7 +45,7 @@ export class PendingByCalculationRequest {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "Array<{ [key: string]: any; }>",
+            "type": "{ [key: string]: string; }",
             "format": ""
         },
         {

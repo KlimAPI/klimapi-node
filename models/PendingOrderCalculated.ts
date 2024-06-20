@@ -26,7 +26,7 @@ export class PendingOrderCalculated {
     /**
     * Add additional queryable information to the order as key-value pairs
     */
-    'metadata'?: Array<{ [key: string]: any; }>;
+    'metadata'?: { [key: string]: string; };
     'project'?: Project;
     /**
     * An array of the calculation results
@@ -69,7 +69,7 @@ export class PendingOrderCalculated {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "Array<{ [key: string]: any; }>",
+            "type": "{ [key: string]: string; }",
             "format": ""
         },
         {

@@ -324,11 +324,9 @@ klimapi.getMetrics({
     getMetricsRequest: {
     operator: "AND",
     filters: {
-      metadata: [
-        {
-          "key": {},
-        },
-      ],
+      metadata: {
+        "key": "key_example",
+      },
       status: "processed",
       recipientName: "recipientName_example",
       recipientEmail: "recipientEmail_example",
@@ -434,11 +432,9 @@ klimapi.getOrders({
     getOrdersRequest: {
     operator: "AND",
     filters: {
-      metadata: [
-        {
-          "key": {},
-        },
-      ],
+      metadata: {
+        "key": "key_example",
+      },
       status: "processed",
       recipientName: "recipientName_example",
       recipientEmail: "recipientEmail_example",
@@ -650,11 +646,9 @@ klimapi.linkByCalculation({
     successUrl: "successUrl_example",
     cancelUrl: "cancelUrl_example",
     orderCount: 1,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
     fractionalDigits: 2,
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
@@ -715,11 +709,9 @@ klimapi.linkByCarbon({
     successUrl: "successUrl_example",
     cancelUrl: "cancelUrl_example",
     orderCount: 1,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
     X_LOCALE: "DE",
@@ -778,11 +770,9 @@ klimapi.linkByPrice({
     successUrl: "successUrl_example",
     cancelUrl: "cancelUrl_example",
     orderCount: 1,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
     X_LOCALE: "DE",
@@ -886,11 +876,9 @@ klimapi.orderByCalculation({
     recipientEmail: "recipientEmail_example",
     sendAt: new Date('1970-01-01T00:00:00.00Z'),
     priceLimit: 0.5,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
     fractionalDigits: 2,
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
@@ -952,11 +940,9 @@ klimapi.orderByCarbon({
     recipientEmail: "recipientEmail_example",
     sendAt: new Date('1970-01-01T00:00:00.00Z'),
     priceLimit: 0.5,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
     X_LOCALE: "DE",
@@ -1015,11 +1001,9 @@ klimapi.orderByPrice({
     recipientName: "recipientName_example",
     recipientEmail: "recipientEmail_example",
     sendAt: new Date('1970-01-01T00:00:00.00Z'),
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
     X_LOCALE: "DE",
@@ -1077,11 +1061,9 @@ klimapi.pendingByCalculation({
       null,
     ],
     orderCount: 1,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
     fractionalDigits: 2,
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
@@ -1139,11 +1121,9 @@ klimapi.pendingByCarbon({
     pendingByCarbonRequest: {
     kgCO2e: 1,
     orderCount: 1,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
     X_LOCALE: "DE",
@@ -1200,11 +1180,9 @@ klimapi.pendingByPrice({
     pendingByPriceRequest: {
     priceAmount: 0.5,
     orderCount: 1,
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK' (optional)
     X_LOCALE: "DE",
@@ -1262,11 +1240,9 @@ klimapi.process({
     recipientName: "recipientName_example",
     recipientEmail: "recipientEmail_example",
     sendAt: new Date('1970-01-01T00:00:00.00Z'),
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // string | The order id specified in the Order
     orderId: "order_id_example",
@@ -1322,11 +1298,9 @@ klimapi.processCart({
     recipientName: "recipientName_example",
     recipientEmail: "recipientEmail_example",
     sendAt: new Date('1970-01-01T00:00:00.00Z'),
-    metadata: [
-      {
-        "key": {},
-      },
-    ],
+    metadata: {
+      "key": "key_example",
+    },
   },
     // string | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
     storeIdent: "store_ident_example",

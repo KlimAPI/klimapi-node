@@ -25,7 +25,7 @@ export class PendingOrder {
     /**
     * Add additional queryable information to the order as key-value pairs
     */
-    'metadata'?: Array<{ [key: string]: any; }>;
+    'metadata'?: { [key: string]: string; };
     'project'?: Project;
 
     static readonly discriminator: string | undefined = undefined;
@@ -64,7 +64,7 @@ export class PendingOrder {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "Array<{ [key: string]: any; }>",
+            "type": "{ [key: string]: string; }",
             "format": ""
         },
         {

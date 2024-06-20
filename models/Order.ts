@@ -32,7 +32,7 @@ export class Order {
     /**
     * Add additional queryable information to the order as key-value pairs
     */
-    'metadata'?: Array<{ [key: string]: any; }>;
+    'metadata'?: { [key: string]: string; };
     'project'?: Project;
     'recipient'?: OrderRecipient;
 
@@ -90,7 +90,7 @@ export class Order {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "Array<{ [key: string]: any; }>",
+            "type": "{ [key: string]: string; }",
             "format": ""
         },
         {

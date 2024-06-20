@@ -1,6 +1,6 @@
 {
   "name": "@klimapi/klimapi-node",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Node package for the KlimAPI API",
   "author": "KlimAPI Team",
   "repository": {

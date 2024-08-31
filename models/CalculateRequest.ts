@@ -7,13 +7,14 @@
  * Contact: tech@klimapi.com
  */
 
+import { PendingByCalculationRequestCalculationOptionsInner } from '../models/PendingByCalculationRequestCalculationOptionsInner';
 import { HttpFile } from '../http/http';
 
 export class CalculateRequest {
     /**
-    * An Array of [Calculation Options](/resources/factors).
+    * An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors).
     */
-    'calculationOptions': Array<any>;
+    'calculationOptions': Array<PendingByCalculationRequestCalculationOptionsInner>;
     /**
     * Normally, the calculation results are rounded to the nearest whole number. Specify here how many decimal places you would like to receive in addition. This only applies to calculation results, compensations are always made in whole kilograms
     */
@@ -25,7 +26,7 @@ export class CalculateRequest {
         {
             "name": "calculationOptions",
             "baseName": "calculation_options",
-            "type": "Array<any>",
+            "type": "Array<PendingByCalculationRequestCalculationOptionsInner>",
             "format": ""
         },
         {

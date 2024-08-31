@@ -7,13 +7,14 @@
  * Contact: tech@klimapi.com
  */
 
+import { PendingByCalculationRequestCalculationOptionsInner } from '../models/PendingByCalculationRequestCalculationOptionsInner';
 import { HttpFile } from '../http/http';
 
 export class LinkByCalculationRequest {
     /**
-    * An Array of [Calculation Options](/resources/factors).
+    * An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors).
     */
-    'calculationOptions': Array<any>;
+    'calculationOptions': Array<PendingByCalculationRequestCalculationOptionsInner>;
     /**
     * Choose if the customer should be allowed to change the amount.
     */
@@ -38,6 +39,10 @@ export class LinkByCalculationRequest {
     * Normally, the calculation results are rounded to the nearest whole number. Specify here how many decimal places you would like to receive in addition. This only applies to calculation results, compensations are always made in whole kilograms
     */
     'fractionalDigits'?: number;
+    /**
+    * With `default` we will automatically provide payment methods based on the customers location, use `invoice` to enable payment by invoice for the given link. Please note that `invoice` bank transfer is only available if **X-CURRENCY** is set to `EUR`. The invoice can always be paid by card.
+    */
+    'paymentType'?: LinkByCalculationRequestPaymentTypeEnum;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -45,7 +50,7 @@ export class LinkByCalculationRequest {
         {
             "name": "calculationOptions",
             "baseName": "calculation_options",
-            "type": "Array<any>",
+            "type": "Array<PendingByCalculationRequestCalculationOptionsInner>",
             "format": ""
         },
         {
@@ -83,6 +88,12 @@ export class LinkByCalculationRequest {
             "baseName": "fractional_digits",
             "type": "number",
             "format": ""
+        },
+        {
+            "name": "paymentType",
+            "baseName": "payment_type",
+            "type": "LinkByCalculationRequestPaymentTypeEnum",
+            "format": ""
         }    ];
 
     static getAttributeTypeMap() {
@@ -91,5 +102,11 @@ export class LinkByCalculationRequest {
 
     public constructor() {
     }
+}
+
+
+export enum LinkByCalculationRequestPaymentTypeEnum {
+    Default = 'default',
+    Invoice = 'invoice'
 }
 

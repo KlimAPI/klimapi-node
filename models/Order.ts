@@ -13,7 +13,10 @@ import { HttpFile } from '../http/http';
 
 export class Order {
     'orderId'?: string;
-    'status'?: string;
+    /**
+    * The status of the order
+    */
+    'status'?: OrderStatusEnum;
     /**
     * Timestamp of when the certificate was issued in ISO 8601 format (UTC)
     */
@@ -48,7 +51,7 @@ export class Order {
         {
             "name": "status",
             "baseName": "status",
-            "type": "string",
+            "type": "OrderStatusEnum",
             "format": ""
         },
         {
@@ -115,6 +118,13 @@ export class Order {
 }
 
 
+export enum OrderStatusEnum {
+    Offer = 'offer',
+    PaymentPending = 'payment_pending',
+    OffsetPending = 'offset_pending',
+    Processed = 'processed',
+    Refunded = 'refunded'
+}
 export enum OrderCurrencyEnum {
     Eur = 'EUR',
     Usd = 'USD',

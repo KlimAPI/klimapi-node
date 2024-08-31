@@ -7,13 +7,14 @@
  * Contact: tech@klimapi.com
  */
 
+import { PendingByCalculationRequestCalculationOptionsInner } from '../models/PendingByCalculationRequestCalculationOptionsInner';
 import { HttpFile } from '../http/http';
 
 export class PendingByCalculationRequest {
     /**
-    * An Array of [Calculation Options](/resources/factors).
+    * An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors).
     */
-    'calculationOptions': Array<any>;
+    'calculationOptions': Array<PendingByCalculationRequestCalculationOptionsInner>;
     /**
     * The amount of pending Orders you want to receive. This is especially useful if you want to offer your customers several different projects for their compensation.
     */
@@ -33,7 +34,7 @@ export class PendingByCalculationRequest {
         {
             "name": "calculationOptions",
             "baseName": "calculation_options",
-            "type": "Array<any>",
+            "type": "Array<PendingByCalculationRequestCalculationOptionsInner>",
             "format": ""
         },
         {

@@ -38,6 +38,14 @@ export class CalculationResult {
     * The unit of the calculation
     */
     'unit'?: string;
+    /**
+    * The unique identifier of the emission factor the calculation is based on
+    */
+    'emissionFactorId'?: string;
+    /**
+    * ISO 8601 formatted timestamp of the latest update for the given emission factor
+    */
+    'emissionFactorLastUpdated'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -81,6 +89,18 @@ export class CalculationResult {
         {
             "name": "unit",
             "baseName": "unit",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "emissionFactorId",
+            "baseName": "emission_factor_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "emissionFactorLastUpdated",
+            "baseName": "emission_factor_last_updated",
             "type": "string",
             "format": ""
         }    ];

@@ -34,6 +34,10 @@ export class LinkByCarbonRequest {
     * Add additional queryable information to the order as key-value pairs
     */
     'metadata'?: { [key: string]: string; };
+    /**
+    * With `default` we will automatically provide payment methods based on the customers location, use `invoice` to enable payment by invoice for the given link. Please note that `invoice` bank transfer is only available if **X-CURRENCY** is set to `EUR`. The invoice can always be paid by card.
+    */
+    'paymentType'?: LinkByCarbonRequestPaymentTypeEnum;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -73,6 +77,12 @@ export class LinkByCarbonRequest {
             "baseName": "metadata",
             "type": "{ [key: string]: string; }",
             "format": ""
+        },
+        {
+            "name": "paymentType",
+            "baseName": "payment_type",
+            "type": "LinkByCarbonRequestPaymentTypeEnum",
+            "format": ""
         }    ];
 
     static getAttributeTypeMap() {
@@ -81,5 +91,11 @@ export class LinkByCarbonRequest {
 
     public constructor() {
     }
+}
+
+
+export enum LinkByCarbonRequestPaymentTypeEnum {
+    Default = 'default',
+    Invoice = 'invoice'
 }
 

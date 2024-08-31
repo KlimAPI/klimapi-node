@@ -10,6 +10,9 @@
 import { Product } from '../models/Product';
 import { HttpFile } from '../http/http';
 
+/**
+* An item in the cart of a specific customer
+*/
 export class CartItem {
     /**
     * The amount of the product in the cart

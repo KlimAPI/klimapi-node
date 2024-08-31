@@ -9,6 +9,9 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* A specific product element
+*/
 export class Product {
     /**
     * A unique identifier for the product

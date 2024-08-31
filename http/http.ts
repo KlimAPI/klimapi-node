@@ -105,7 +105,7 @@ export class RequestContext {
     public getHeaders(): { [key: string]: string } {
         return {
             ...this.headers,
-            'User-Agent': 'KlimAPI/klimapi-node/2.0.8'
+            'User-Agent': 'KlimAPI/klimapi-node/2.0.9'
         };
     }
 

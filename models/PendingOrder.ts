@@ -12,7 +12,10 @@ import { HttpFile } from '../http/http';
 
 export class PendingOrder {
     'orderId'?: string;
-    'status'?: string;
+    /**
+    * The status of the order
+    */
+    'status'?: PendingOrderStatusEnum;
     /**
     * The total of the compensation in your given currency **excl. VAT**.
     */
@@ -40,7 +43,7 @@ export class PendingOrder {
         {
             "name": "status",
             "baseName": "status",
-            "type": "string",
+            "type": "PendingOrderStatusEnum",
             "format": ""
         },
         {
@@ -83,6 +86,13 @@ export class PendingOrder {
 }
 
 
+export enum PendingOrderStatusEnum {
+    Offer = 'offer',
+    PaymentPending = 'payment_pending',
+    OffsetPending = 'offset_pending',
+    Processed = 'processed',
+    Refunded = 'refunded'
+}
 export enum PendingOrderCurrencyEnum {
     Eur = 'EUR',
     Usd = 'USD',

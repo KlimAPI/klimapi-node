@@ -2,6 +2,16 @@ import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/htt
 import { Configuration} from '../configuration'
 
 import { AddWebhookRequest } from '../models/AddWebhookRequest';
+import { BioenergyAverageEnergy } from '../models/BioenergyAverageEnergy';
+import { BioenergyAverageVolume } from '../models/BioenergyAverageVolume';
+import { BioenergyAverageWeight } from '../models/BioenergyAverageWeight';
+import { BioenergyBiofuelEnergy } from '../models/BioenergyBiofuelEnergy';
+import { BioenergyBiofuelVolume } from '../models/BioenergyBiofuelVolume';
+import { BioenergyBiofuelWeight } from '../models/BioenergyBiofuelWeight';
+import { BioenergyBiogasEnergy } from '../models/BioenergyBiogasEnergy';
+import { BioenergyBiogasWeight } from '../models/BioenergyBiogasWeight';
+import { BioenergyBiomassEnergy } from '../models/BioenergyBiomassEnergy';
+import { BioenergyBiomassWeight } from '../models/BioenergyBiomassWeight';
 import { BuyAmount } from '../models/BuyAmount';
 import { BuyPrice } from '../models/BuyPrice';
 import { CalculateRequest } from '../models/CalculateRequest';
@@ -17,12 +27,86 @@ import { CheckoutLink } from '../models/CheckoutLink';
 import { CheckoutLinkCalculated } from '../models/CheckoutLinkCalculated';
 import { CheckoutLinks } from '../models/CheckoutLinks';
 import { CheckoutLinksCalculated } from '../models/CheckoutLinksCalculated';
+import { CloudComputingAverageCpuHour } from '../models/CloudComputingAverageCpuHour';
+import { CloudComputingAverageGb } from '../models/CloudComputingAverageGb';
+import { CloudComputingAverageGbHour } from '../models/CloudComputingAverageGbHour';
+import { CloudComputingAverageTbHour } from '../models/CloudComputingAverageTbHour';
+import { CloudComputingCpuCpuHour } from '../models/CloudComputingCpuCpuHour';
+import { CloudComputingMemoryGbHour } from '../models/CloudComputingMemoryGbHour';
+import { CloudComputingNetworkGb } from '../models/CloudComputingNetworkGb';
+import { CloudComputingStorageTbHour } from '../models/CloudComputingStorageTbHour';
+import { EnergyConsumptionAverageEnergy } from '../models/EnergyConsumptionAverageEnergy';
+import { EnergyConsumptionByTypeEnergy } from '../models/EnergyConsumptionByTypeEnergy';
+import { FoodAverageCurrency } from '../models/FoodAverageCurrency';
+import { FoodBeveragesCurrency } from '../models/FoodBeveragesCurrency';
+import { FoodDairyProductsCurrency } from '../models/FoodDairyProductsCurrency';
+import { FoodFishProductsCurrency } from '../models/FoodFishProductsCurrency';
+import { FoodFoodProductsNotElsewhereSpecifiedCurrency } from '../models/FoodFoodProductsNotElsewhereSpecifiedCurrency';
+import { FoodMeatProductsBeefCurrency } from '../models/FoodMeatProductsBeefCurrency';
+import { FoodMeatProductsNotElsewhereSpecifiedCurrency } from '../models/FoodMeatProductsNotElsewhereSpecifiedCurrency';
+import { FoodMeatProductsPorkCurrency } from '../models/FoodMeatProductsPorkCurrency';
+import { FoodMeatProductsPoultryCurrency } from '../models/FoodMeatProductsPoultryCurrency';
+import { FoodProcessedRiceCurrency } from '../models/FoodProcessedRiceCurrency';
+import { FoodSugarCurrency } from '../models/FoodSugarCurrency';
+import { FoodTobaccoProductsCurrency } from '../models/FoodTobaccoProductsCurrency';
+import { FoodVegetableOilsAndFatsCurrency } from '../models/FoodVegetableOilsAndFatsCurrency';
+import { FreightingGoodsAverageDepartureAndDestination } from '../models/FreightingGoodsAverageDepartureAndDestination';
+import { FreightingGoodsAverageDistance } from '../models/FreightingGoodsAverageDistance';
+import { FreightingGoodsAverageWeightAndDistance } from '../models/FreightingGoodsAverageWeightAndDistance';
+import { FreightingGoodsCargoShipDepartureAndDestination } from '../models/FreightingGoodsCargoShipDepartureAndDestination';
+import { FreightingGoodsCargoShipWeightAndDistance } from '../models/FreightingGoodsCargoShipWeightAndDistance';
+import { FreightingGoodsFreightFlightsDepartureAndDestination } from '../models/FreightingGoodsFreightFlightsDepartureAndDestination';
+import { FreightingGoodsFreightFlightsWeightAndDistance } from '../models/FreightingGoodsFreightFlightsWeightAndDistance';
+import { FreightingGoodsHgvAllDieselDepartureAndDestination } from '../models/FreightingGoodsHgvAllDieselDepartureAndDestination';
+import { FreightingGoodsHgvAllDieselDistance } from '../models/FreightingGoodsHgvAllDieselDistance';
+import { FreightingGoodsHgvAllDieselWeightAndDistance } from '../models/FreightingGoodsHgvAllDieselWeightAndDistance';
+import { FreightingGoodsHgvRefrigeratedAllDieselDepartureAndDestination } from '../models/FreightingGoodsHgvRefrigeratedAllDieselDepartureAndDestination';
+import { FreightingGoodsHgvRefrigeratedAllDieselDistance } from '../models/FreightingGoodsHgvRefrigeratedAllDieselDistance';
+import { FreightingGoodsHgvRefrigeratedAllDieselWeightAndDistance } from '../models/FreightingGoodsHgvRefrigeratedAllDieselWeightAndDistance';
+import { FreightingGoodsRailDepartureAndDestination } from '../models/FreightingGoodsRailDepartureAndDestination';
+import { FreightingGoodsRailWeightAndDistance } from '../models/FreightingGoodsRailWeightAndDistance';
+import { FreightingGoodsRoadDepartureAndDestination } from '../models/FreightingGoodsRoadDepartureAndDestination';
+import { FreightingGoodsRoadWeightAndDistance } from '../models/FreightingGoodsRoadWeightAndDistance';
+import { FreightingGoodsSeaTankerDepartureAndDestination } from '../models/FreightingGoodsSeaTankerDepartureAndDestination';
+import { FreightingGoodsSeaTankerWeightAndDistance } from '../models/FreightingGoodsSeaTankerWeightAndDistance';
+import { FreightingGoodsVansDepartureAndDestination } from '../models/FreightingGoodsVansDepartureAndDestination';
+import { FreightingGoodsVansDistance } from '../models/FreightingGoodsVansDistance';
+import { FreightingGoodsVansWeightAndDistance } from '../models/FreightingGoodsVansWeightAndDistance';
+import { FuelsAverageVolume } from '../models/FuelsAverageVolume';
+import { FuelsAverageWeight } from '../models/FuelsAverageWeight';
+import { FuelsGaseousFuelsVolume } from '../models/FuelsGaseousFuelsVolume';
+import { FuelsGaseousFuelsWeight } from '../models/FuelsGaseousFuelsWeight';
+import { FuelsLiquidFuelsVolume } from '../models/FuelsLiquidFuelsVolume';
+import { FuelsLiquidFuelsWeight } from '../models/FuelsLiquidFuelsWeight';
+import { FuelsSolidFuelsWeight } from '../models/FuelsSolidFuelsWeight';
 import { GetMetricsRequest } from '../models/GetMetricsRequest';
 import { GetOrdersRequest } from '../models/GetOrdersRequest';
 import { GetOrdersRequestFilters } from '../models/GetOrdersRequestFilters';
+import { HeatAndSteamEnergy } from '../models/HeatAndSteamEnergy';
+import { HomeworkingPerFteWorkingHour } from '../models/HomeworkingPerFteWorkingHour';
+import { HotelStayRoomPerNight } from '../models/HotelStayRoomPerNight';
+import { IndividualFactor } from '../models/IndividualFactor';
+import { InfrastructureAverageCurrency } from '../models/InfrastructureAverageCurrency';
+import { InfrastructureRealEstateCurrency } from '../models/InfrastructureRealEstateCurrency';
+import { InvoiceDetails } from '../models/InvoiceDetails';
+import { InvoiceDetailsAddress } from '../models/InvoiceDetailsAddress';
+import { InvoiceDetailsTaxId } from '../models/InvoiceDetailsTaxId';
 import { LinkByCalculationRequest } from '../models/LinkByCalculationRequest';
 import { LinkByCarbonRequest } from '../models/LinkByCarbonRequest';
 import { LinkByPriceRequest } from '../models/LinkByPriceRequest';
+import { MaterialUseAverageCurrency } from '../models/MaterialUseAverageCurrency';
+import { MaterialUseAverageWeight } from '../models/MaterialUseAverageWeight';
+import { MaterialUseConstructionWeight } from '../models/MaterialUseConstructionWeight';
+import { MaterialUseElectricalItemsWeight } from '../models/MaterialUseElectricalItemsWeight';
+import { MaterialUseElectronicsCurrency } from '../models/MaterialUseElectronicsCurrency';
+import { MaterialUseFurnitureCurrency } from '../models/MaterialUseFurnitureCurrency';
+import { MaterialUseMetalWeight } from '../models/MaterialUseMetalWeight';
+import { MaterialUseOrganicWeight } from '../models/MaterialUseOrganicWeight';
+import { MaterialUseOtherWeight } from '../models/MaterialUseOtherWeight';
+import { MaterialUsePaperProductsCurrency } from '../models/MaterialUsePaperProductsCurrency';
+import { MaterialUsePaperWeight } from '../models/MaterialUsePaperWeight';
+import { MaterialUsePlasticWeight } from '../models/MaterialUsePlasticWeight';
+import { MaterialUseTextilesCurrency } from '../models/MaterialUseTextilesCurrency';
 import { MetadataOrders } from '../models/MetadataOrders';
 import { Order } from '../models/Order';
 import { OrderByCalculationRequest } from '../models/OrderByCalculationRequest';
@@ -30,6 +114,7 @@ import { OrderCalculated } from '../models/OrderCalculated';
 import { OrderMetrics } from '../models/OrderMetrics';
 import { OrderRecipient } from '../models/OrderRecipient';
 import { PendingByCalculationRequest } from '../models/PendingByCalculationRequest';
+import { PendingByCalculationRequestCalculationOptionsInner } from '../models/PendingByCalculationRequestCalculationOptionsInner';
 import { PendingByCarbonRequest } from '../models/PendingByCarbonRequest';
 import { PendingByPriceRequest } from '../models/PendingByPriceRequest';
 import { PendingOrder } from '../models/PendingOrder';
@@ -39,6 +124,43 @@ import { PendingOrdersCalculated } from '../models/PendingOrdersCalculated';
 import { ProcessOrder } from '../models/ProcessOrder';
 import { Product } from '../models/Product';
 import { Project } from '../models/Project';
+import { TravelAirAverageDepartureAndDestination } from '../models/TravelAirAverageDepartureAndDestination';
+import { TravelAirAveragePassengerDistance } from '../models/TravelAirAveragePassengerDistance';
+import { TravelAirFlightsDepartureAndDestination } from '../models/TravelAirFlightsDepartureAndDestination';
+import { TravelAirFlightsPassengerDistance } from '../models/TravelAirFlightsPassengerDistance';
+import { TravelLandAverageDepartureAndDestination } from '../models/TravelLandAverageDepartureAndDestination';
+import { TravelLandAverageDistance } from '../models/TravelLandAverageDistance';
+import { TravelLandAveragePassengerDistance } from '../models/TravelLandAveragePassengerDistance';
+import { TravelLandBusDepartureAndDestination } from '../models/TravelLandBusDepartureAndDestination';
+import { TravelLandBusPassengerDistance } from '../models/TravelLandBusPassengerDistance';
+import { TravelLandCarsByMarketSegmentDepartureAndDestination } from '../models/TravelLandCarsByMarketSegmentDepartureAndDestination';
+import { TravelLandCarsByMarketSegmentDistance } from '../models/TravelLandCarsByMarketSegmentDistance';
+import { TravelLandCarsBySizeDepartureAndDestination } from '../models/TravelLandCarsBySizeDepartureAndDestination';
+import { TravelLandCarsBySizeDistance } from '../models/TravelLandCarsBySizeDistance';
+import { TravelLandFootBikeDepartureAndDestination } from '../models/TravelLandFootBikeDepartureAndDestination';
+import { TravelLandFootBikePassengerDistance } from '../models/TravelLandFootBikePassengerDistance';
+import { TravelLandMotorbikeDepartureAndDestination } from '../models/TravelLandMotorbikeDepartureAndDestination';
+import { TravelLandMotorbikeDistance } from '../models/TravelLandMotorbikeDistance';
+import { TravelLandRailDepartureAndDestination } from '../models/TravelLandRailDepartureAndDestination';
+import { TravelLandRailPassengerDistance } from '../models/TravelLandRailPassengerDistance';
+import { TravelLandTaxisDepartureAndDestination } from '../models/TravelLandTaxisDepartureAndDestination';
+import { TravelLandTaxisDistance } from '../models/TravelLandTaxisDistance';
+import { TravelLandTaxisPassengerDistance } from '../models/TravelLandTaxisPassengerDistance';
+import { TravelSeaAverageDepartureAndDestination } from '../models/TravelSeaAverageDepartureAndDestination';
+import { TravelSeaAveragePassengerDistance } from '../models/TravelSeaAveragePassengerDistance';
+import { TravelSeaCruiseDays } from '../models/TravelSeaCruiseDays';
+import { TravelSeaFerryDepartureAndDestination } from '../models/TravelSeaFerryDepartureAndDestination';
+import { TravelSeaFerryPassengerDistance } from '../models/TravelSeaFerryPassengerDistance';
+import { WasteDisposalAverageWeight } from '../models/WasteDisposalAverageWeight';
+import { WasteDisposalConstructionWeight } from '../models/WasteDisposalConstructionWeight';
+import { WasteDisposalElectricalItemsWeight } from '../models/WasteDisposalElectricalItemsWeight';
+import { WasteDisposalMetalWeight } from '../models/WasteDisposalMetalWeight';
+import { WasteDisposalOtherWeight } from '../models/WasteDisposalOtherWeight';
+import { WasteDisposalPaperWeight } from '../models/WasteDisposalPaperWeight';
+import { WasteDisposalPlasticWeight } from '../models/WasteDisposalPlasticWeight';
+import { WasteDisposalRefuseWeight } from '../models/WasteDisposalRefuseWeight';
+import { WaterSupplyVolume } from '../models/WaterSupplyVolume';
+import { WaterTreatmentVolume } from '../models/WaterTreatmentVolume';
 
 import { ObservableKlimApi } from "./ObservableAPI";
 import { KlimApiRequestFactory, KlimApiResponseProcessor} from "../apis/KlimApi";
@@ -54,7 +176,7 @@ export interface KlimApiAddWebhookRequest {
 
 export interface KlimApiCalculateRequest {
     /**
-     * Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
+     * Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
      * @type CalculateRequest
      * @memberof KlimApicalculate
      */
@@ -69,19 +191,19 @@ export interface KlimApiCalculateCartRequest {
      */
     cartItem: Array<CartItem>
     /**
-     * Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+     * Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
      * @type string
      * @memberof KlimApicalculateCart
      */
     storeIdent: string
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApicalculateCart
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApicalculateCart
      */
@@ -90,7 +212,7 @@ export interface KlimApiCalculateCartRequest {
 
 export interface KlimApiGetCategoriesRequest {
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApigetCategories
      */
@@ -117,7 +239,7 @@ export interface KlimApiGetOrderRequest {
      */
     orderId: string
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApigetOrder
      */
@@ -132,7 +254,7 @@ export interface KlimApiGetOrdersRequest {
      */
     getOrdersRequest: GetOrdersRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApigetOrders
      */
@@ -141,13 +263,13 @@ export interface KlimApiGetOrdersRequest {
 
 export interface KlimApiGetPaymentLinkRequest {
     /**
-     * 
+     * The identifier of the checkout link that you want to be returned.
      * @type string
      * @memberof KlimApigetPaymentLink
      */
     paymentLinkId: string
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApigetPaymentLink
      */
@@ -162,7 +284,7 @@ export interface KlimApiGetProjectRequest {
      */
     projectId: string
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApigetProject
      */
@@ -171,7 +293,7 @@ export interface KlimApiGetProjectRequest {
 
 export interface KlimApiGetProjectsRequest {
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApigetProjects
      */
@@ -180,19 +302,19 @@ export interface KlimApiGetProjectsRequest {
 
 export interface KlimApiLinkByCalculationRequest {
     /**
-     * Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
+     * Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
      * @type LinkByCalculationRequest
      * @memberof KlimApilinkByCalculation
      */
     linkByCalculationRequest: LinkByCalculationRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApilinkByCalculation
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApilinkByCalculation
      */
@@ -207,13 +329,13 @@ export interface KlimApiLinkByCarbonRequest {
      */
     linkByCarbonRequest?: LinkByCarbonRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApilinkByCarbon
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApilinkByCarbon
      */
@@ -228,13 +350,13 @@ export interface KlimApiLinkByPriceRequest {
      */
     linkByPriceRequest?: LinkByPriceRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApilinkByPrice
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApilinkByPrice
      */
@@ -246,19 +368,19 @@ export interface KlimApiMeRequest {
 
 export interface KlimApiOrderByCalculationRequest {
     /**
-     * Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
+     * Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
      * @type OrderByCalculationRequest
      * @memberof KlimApiorderByCalculation
      */
     orderByCalculationRequest: OrderByCalculationRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApiorderByCalculation
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApiorderByCalculation
      */
@@ -273,13 +395,13 @@ export interface KlimApiOrderByCarbonRequest {
      */
     buyAmount?: BuyAmount
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApiorderByCarbon
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApiorderByCarbon
      */
@@ -294,13 +416,13 @@ export interface KlimApiOrderByPriceRequest {
      */
     buyPrice?: BuyPrice
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApiorderByPrice
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApiorderByPrice
      */
@@ -309,19 +431,19 @@ export interface KlimApiOrderByPriceRequest {
 
 export interface KlimApiPendingByCalculationRequest {
     /**
-     * Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
+     * Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
      * @type PendingByCalculationRequest
      * @memberof KlimApipendingByCalculation
      */
     pendingByCalculationRequest: PendingByCalculationRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApipendingByCalculation
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApipendingByCalculation
      */
@@ -336,13 +458,13 @@ export interface KlimApiPendingByCarbonRequest {
      */
     pendingByCarbonRequest: PendingByCarbonRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApipendingByCarbon
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApipendingByCarbon
      */
@@ -357,13 +479,13 @@ export interface KlimApiPendingByPriceRequest {
      */
     pendingByPriceRequest: PendingByPriceRequest
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApipendingByPrice
      */
     X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK'
     /**
-     * 
+     * The currency of the returned offset price
      * @type &#39;EUR&#39; | &#39;USD&#39; | &#39;GBP&#39; | &#39;CHF&#39; | &#39;CAD&#39; | &#39;NOK&#39; | &#39;SEK&#39; | &#39;DKK&#39; | &#39;INR&#39; | &#39;ALL&#39; | &#39;AMD&#39; | &#39;ANG&#39; | &#39;AOA&#39; | &#39;ARS&#39; | &#39;AUD&#39; | &#39;AWG&#39; | &#39;AZN&#39; | &#39;BAM&#39; | &#39;BBD&#39; | &#39;BDT&#39; | &#39;BGN&#39; | &#39;BMD&#39; | &#39;BND&#39; | &#39;BOB&#39; | &#39;BRL&#39; | &#39;BSD&#39; | &#39;BWP&#39; | &#39;BZD&#39; | &#39;COP&#39; | &#39;CRC&#39; | &#39;CVE&#39; | &#39;CZK&#39; | &#39;DOP&#39; | &#39;DZD&#39; | &#39;EGP&#39; | &#39;ETB&#39; | &#39;FJD&#39; | &#39;FKP&#39; | &#39;GEL&#39; | &#39;GIP&#39; | &#39;GMD&#39; | &#39;GTQ&#39; | &#39;GYD&#39; | &#39;HKD&#39; | &#39;HNL&#39; | &#39;HTG&#39; | &#39;HUF&#39; | &#39;IDR&#39; | &#39;ILS&#39; | &#39;ISK&#39; | &#39;JMD&#39; | &#39;KES&#39; | &#39;KGS&#39; | &#39;KHR&#39; | &#39;KYD&#39; | &#39;KZT&#39; | &#39;LAK&#39; | &#39;LBP&#39; | &#39;LKR&#39; | &#39;LRD&#39; | &#39;LSL&#39; | &#39;MAD&#39; | &#39;MDL&#39; | &#39;MKD&#39; | &#39;MMK&#39; | &#39;MNT&#39; | &#39;MOP&#39; | &#39;MUR&#39; | &#39;MVR&#39; | &#39;MWK&#39; | &#39;MXN&#39; | &#39;MYR&#39; | &#39;MZN&#39; | &#39;NAD&#39; | &#39;NGN&#39; | &#39;NIO&#39; | &#39;NPR&#39; | &#39;NZD&#39; | &#39;PAB&#39; | &#39;PEN&#39; | &#39;PGK&#39; | &#39;PHP&#39; | &#39;PKR&#39; | &#39;PLN&#39; | &#39;QAR&#39; | &#39;RON&#39; | &#39;RSD&#39; | &#39;SBD&#39; | &#39;SCR&#39; | &#39;SGD&#39; | &#39;SHP&#39; | &#39;SLE&#39; | &#39;SOS&#39; | &#39;SRD&#39; | &#39;STD&#39; | &#39;SZL&#39; | &#39;THB&#39; | &#39;TJS&#39; | &#39;TOP&#39; | &#39;TRY&#39; | &#39;TTD&#39; | &#39;TWD&#39; | &#39;TZS&#39; | &#39;UAH&#39; | &#39;UYU&#39; | &#39;UZS&#39; | &#39;WST&#39; | &#39;XCD&#39; | &#39;YER&#39; | &#39;ZAR&#39; | &#39;ZMW&#39;
      * @memberof KlimApipendingByPrice
      */
@@ -384,7 +506,7 @@ export interface KlimApiProcessRequest {
      */
     orderId: string
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApiprocess
      */
@@ -399,7 +521,7 @@ export interface KlimApiProcessCartRequest {
      */
     processOrder: ProcessOrder
     /**
-     * Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+     * Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
      * @type string
      * @memberof KlimApiprocessCart
      */
@@ -411,7 +533,7 @@ export interface KlimApiProcessCartRequest {
      */
     orderId: string
     /**
-     * 
+     * The locale in which the response should be returned
      * @type &#39;DE&#39; | &#39;EN&#39; | &#39;ES&#39; | &#39;FR&#39; | &#39;IT&#39; | &#39;NL&#39; | &#39;PL&#39; | &#39;PT&#39; | &#39;SV&#39; | &#39;SL&#39; | &#39;FI&#39; | &#39;BG&#39; | &#39;CS&#39; | &#39;DA&#39; | &#39;EL&#39; | &#39;ET&#39; | &#39;HU&#39; | &#39;LT&#39; | &#39;LV&#39; | &#39;RO&#39; | &#39;SK&#39;
      * @memberof KlimApiprocessCart
      */
@@ -444,7 +566,7 @@ export interface KlimApiSyncBulkStoreRequest {
      */
     product: Array<Product>
     /**
-     * Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+     * Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
      * @type string
      * @memberof KlimApisyncBulkStore
      */
@@ -459,7 +581,7 @@ export interface KlimApiSyncStoreRequest {
      */
     product: Product
     /**
-     * Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+     * Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
      * @type string
      * @memberof KlimApisyncStore
      */
@@ -546,7 +668,7 @@ export class ObjectKlimApi {
     }
 
     /**
-     * Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+     * Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
      * Get all Certification Authorities
      * @param param the request object
      */
@@ -555,7 +677,7 @@ export class ObjectKlimApi {
     }
 
     /**
-     * Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+     * Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
      * Get all Certification Authorities
      * @param param the request object
      */
@@ -673,7 +795,7 @@ export class ObjectKlimApi {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
+     * By Calculation
      * @param param the request object
      */
     public linkByCalculationWithHttpInfo(param: KlimApiLinkByCalculationRequest, options?: Configuration): Promise<HttpInfo<CheckoutLinksCalculated>> {
@@ -682,7 +804,7 @@ export class ObjectKlimApi {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
+     * By Calculation
      * @param param the request object
      */
     public linkByCalculation(param: KlimApiLinkByCalculationRequest, options?: Configuration): Promise<CheckoutLinksCalculated> {
@@ -691,7 +813,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by kilogram CO2e.
-     * By carbon
+     * By Carbon
      * @param param the request object
      */
     public linkByCarbonWithHttpInfo(param: KlimApiLinkByCarbonRequest = {}, options?: Configuration): Promise<HttpInfo<CheckoutLinks>> {
@@ -700,7 +822,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by kilogram CO2e.
-     * By carbon
+     * By Carbon
      * @param param the request object
      */
     public linkByCarbon(param: KlimApiLinkByCarbonRequest = {}, options?: Configuration): Promise<CheckoutLinks> {
@@ -709,7 +831,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by price.
-     * By price
+     * By Price
      * @param param the request object
      */
     public linkByPriceWithHttpInfo(param: KlimApiLinkByPriceRequest = {}, options?: Configuration): Promise<HttpInfo<CheckoutLinks>> {
@@ -718,7 +840,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by price.
-     * By price
+     * By Price
      * @param param the request object
      */
     public linkByPrice(param: KlimApiLinkByPriceRequest = {}, options?: Configuration): Promise<CheckoutLinks> {
@@ -745,7 +867,7 @@ export class ObjectKlimApi {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
+     * By Calculation
      * @param param the request object
      */
     public orderByCalculationWithHttpInfo(param: KlimApiOrderByCalculationRequest, options?: Configuration): Promise<HttpInfo<OrderCalculated>> {
@@ -754,7 +876,7 @@ export class ObjectKlimApi {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
+     * By Calculation
      * @param param the request object
      */
     public orderByCalculation(param: KlimApiOrderByCalculationRequest, options?: Configuration): Promise<OrderCalculated> {
@@ -763,7 +885,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
-     * By carbon
+     * By Carbon
      * @param param the request object
      */
     public orderByCarbonWithHttpInfo(param: KlimApiOrderByCarbonRequest = {}, options?: Configuration): Promise<HttpInfo<Order>> {
@@ -772,7 +894,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
-     * By carbon
+     * By Carbon
      * @param param the request object
      */
     public orderByCarbon(param: KlimApiOrderByCarbonRequest = {}, options?: Configuration): Promise<Order> {
@@ -781,7 +903,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by price. For this route the API key has no limits.
-     * By price
+     * By Price
      * @param param the request object
      */
     public orderByPriceWithHttpInfo(param: KlimApiOrderByPriceRequest = {}, options?: Configuration): Promise<HttpInfo<Order>> {
@@ -790,7 +912,7 @@ export class ObjectKlimApi {
 
     /**
      * Get the compensation instantly by price. For this route the API key has no limits.
-     * By price
+     * By Price
      * @param param the request object
      */
     public orderByPrice(param: KlimApiOrderByPriceRequest = {}, options?: Configuration): Promise<Order> {
@@ -799,7 +921,7 @@ export class ObjectKlimApi {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
+     * By Calculation
      * @param param the request object
      */
     public pendingByCalculationWithHttpInfo(param: KlimApiPendingByCalculationRequest, options?: Configuration): Promise<HttpInfo<PendingOrdersCalculated>> {
@@ -808,7 +930,7 @@ export class ObjectKlimApi {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
+     * By Calculation
      * @param param the request object
      */
     public pendingByCalculation(param: KlimApiPendingByCalculationRequest, options?: Configuration): Promise<PendingOrdersCalculated> {
@@ -817,7 +939,7 @@ export class ObjectKlimApi {
 
     /**
      * Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
-     * By carbon
+     * By Carbon
      * @param param the request object
      */
     public pendingByCarbonWithHttpInfo(param: KlimApiPendingByCarbonRequest, options?: Configuration): Promise<HttpInfo<PendingOrders>> {
@@ -826,7 +948,7 @@ export class ObjectKlimApi {
 
     /**
      * Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
-     * By carbon
+     * By Carbon
      * @param param the request object
      */
     public pendingByCarbon(param: KlimApiPendingByCarbonRequest, options?: Configuration): Promise<PendingOrders> {
@@ -835,7 +957,7 @@ export class ObjectKlimApi {
 
     /**
      * Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
-     * By price
+     * By Price
      * @param param the request object
      */
     public pendingByPriceWithHttpInfo(param: KlimApiPendingByPriceRequest, options?: Configuration): Promise<HttpInfo<PendingOrders>> {
@@ -844,7 +966,7 @@ export class ObjectKlimApi {
 
     /**
      * Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
-     * By price
+     * By Price
      * @param param the request object
      */
     public pendingByPrice(param: KlimApiPendingByPriceRequest, options?: Configuration): Promise<PendingOrders> {
@@ -853,7 +975,7 @@ export class ObjectKlimApi {
 
     /**
      * You accepted the given order. You may now show a confirmation or provide the link to the certificate.
-     * Process pending Order
+     * Process Pending Order
      * @param param the request object
      */
     public processWithHttpInfo(param: KlimApiProcessRequest, options?: Configuration): Promise<HttpInfo<Order>> {
@@ -862,7 +984,7 @@ export class ObjectKlimApi {
 
     /**
      * You accepted the given order. You may now show a confirmation or provide the link to the certificate.
-     * Process pending Order
+     * Process Pending Order
      * @param param the request object
      */
     public process(param: KlimApiProcessRequest, options?: Configuration): Promise<Order> {
@@ -870,8 +992,8 @@ export class ObjectKlimApi {
     }
 
     /**
-     * 
-     * Process cart
+     * Process a given cart to offset the cart\'s emissions
+     * Process Cart
      * @param param the request object
      */
     public processCartWithHttpInfo(param: KlimApiProcessCartRequest, options?: Configuration): Promise<HttpInfo<Order>> {
@@ -879,8 +1001,8 @@ export class ObjectKlimApi {
     }
 
     /**
-     * 
-     * Process cart
+     * Process a given cart to offset the cart\'s emissions
+     * Process Cart
      * @param param the request object
      */
     public processCart(param: KlimApiProcessCartRequest, options?: Configuration): Promise<Order> {

@@ -41,6 +41,14 @@ export class GetOrdersRequestFilters {
     * The amount of kg CO<sub>2</sub>e of the orders you want to receive
     */
     'kgCO2e'?: number;
+    /**
+    * Specify a timeframe for your response in ISO 8601 format (UTC)
+    */
+    '_from'?: Date;
+    /**
+    * Specify a timeframe for your response in ISO 8601 format (UTC)
+    */
+    'to'?: Date;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -86,6 +94,18 @@ export class GetOrdersRequestFilters {
             "baseName": "kgCO2e",
             "type": "number",
             "format": ""
+        },
+        {
+            "name": "_from",
+            "baseName": "from",
+            "type": "Date",
+            "format": "date-time"
+        },
+        {
+            "name": "to",
+            "baseName": "to",
+            "type": "Date",
+            "format": "date-time"
         }    ];
 
     static getAttributeTypeMap() {
@@ -98,7 +118,9 @@ export class GetOrdersRequestFilters {
 
 
 export enum GetOrdersRequestFiltersStatusEnum {
-    Pending = 'pending',
+    Offer = 'offer',
+    PaymentPending = 'payment_pending',
+    OffsetPending = 'offset_pending',
     Processed = 'processed',
     Refunded = 'refunded'
 }

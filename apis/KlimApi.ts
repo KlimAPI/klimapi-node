@@ -97,7 +97,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
      * Calculate
-     * @param calculateRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
+     * @param calculateRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
      */
     public async calculate(calculateRequest: CalculateRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -146,9 +146,9 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
      * Calculate
      * @param cartItem 
-     * @param storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * @param storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async calculateCart(cartItem: Array<CartItem>, storeIdent: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -215,7 +215,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Use the method to get all activated categories for the given API key.
      * Get all Categories
-     * @param X_LOCALE 
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async getCategories(X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -250,7 +250,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+     * Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
      * Get all Certification Authorities
      */
     public async getCertificationAuthorities(_options?: Configuration): Promise<RequestContext> {
@@ -331,7 +331,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
      * Here you can request information about a specific Order.
      * Get Order
      * @param orderId You can get the order_id from several endpoints, for example when creating an Order.
-     * @param X_LOCALE 
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async getOrder(orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -376,7 +376,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
      * Query all orders
      * Get Orders
      * @param getOrdersRequest 
-     * @param X_LOCALE 
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async getOrders(getOrdersRequest: GetOrdersRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -430,8 +430,8 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Here you can request information about a specific Checkout Link.
      * Get Checkout Link
-     * @param paymentLinkId 
-     * @param X_LOCALE 
+     * @param paymentLinkId The identifier of the checkout link that you want to be returned.
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async getPaymentLink(paymentLinkId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -476,7 +476,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
      * Here you can request information to every project in our database.
      * Get Project
      * @param projectId You can get the project_id from several endpoints, for example when creating an Order.
-     * @param X_LOCALE 
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async getProject(projectId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -520,7 +520,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * Get all projects you supported with the given API key.
      * Get all supported Projects
-     * @param X_LOCALE 
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async getProjects(X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -556,10 +556,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
-     * @param linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * By Calculation
+     * @param linkByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async linkByCalculation(linkByCalculationRequest: LinkByCalculationRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -618,10 +618,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Get the compensation instantly by kilogram CO2e.
-     * By carbon
+     * By Carbon
      * @param linkByCarbonRequest 
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async linkByCarbon(linkByCarbonRequest?: LinkByCarbonRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -675,10 +675,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Get the compensation instantly by price.
-     * By price
+     * By Price
      * @param linkByPriceRequest 
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async linkByPrice(linkByPriceRequest?: LinkByPriceRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -762,10 +762,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
-     * @param orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * By Calculation
+     * @param orderByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async orderByCalculation(orderByCalculationRequest: OrderByCalculationRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -824,10 +824,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
-     * By carbon
+     * By Carbon
      * @param buyAmount 
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async orderByCarbon(buyAmount?: BuyAmount, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -881,10 +881,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Get the compensation instantly by price. For this route the API key has no limits.
-     * By price
+     * By Price
      * @param buyPrice 
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async orderByPrice(buyPrice?: BuyPrice, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -938,10 +938,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
-     * By calculation
-     * @param pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * By Calculation
+     * @param pendingByCalculationRequest Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async pendingByCalculation(pendingByCalculationRequest: PendingByCalculationRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -1000,10 +1000,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
-     * By carbon
+     * By Carbon
      * @param pendingByCarbonRequest 
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async pendingByCarbon(pendingByCarbonRequest: PendingByCarbonRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -1062,10 +1062,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
-     * By price
+     * By Price
      * @param pendingByPriceRequest 
-     * @param X_LOCALE 
-     * @param X_CURRENCY 
+     * @param X_LOCALE The locale in which the response should be returned
+     * @param X_CURRENCY The currency of the returned offset price
      */
     public async pendingByPrice(pendingByPriceRequest: PendingByPriceRequest, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', X_CURRENCY?: 'EUR' | 'USD' | 'GBP' | 'CHF' | 'CAD' | 'NOK' | 'SEK' | 'DKK' | 'INR' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BWP' | 'BZD' | 'COP' | 'CRC' | 'CVE' | 'CZK' | 'DOP' | 'DZD' | 'EGP' | 'ETB' | 'FJD' | 'FKP' | 'GEL' | 'GIP' | 'GMD' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'ISK' | 'JMD' | 'KES' | 'KGS' | 'KHR' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'MAD' | 'MDL' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NPR' | 'NZD' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'QAR' | 'RON' | 'RSD' | 'SBD' | 'SCR' | 'SGD' | 'SHP' | 'SLE' | 'SOS' | 'SRD' | 'STD' | 'SZL' | 'THB' | 'TJS' | 'TOP' | 'TRY' | 'TTD' | 'TWD' | 'TZS' | 'UAH' | 'UYU' | 'UZS' | 'WST' | 'XCD' | 'YER' | 'ZAR' | 'ZMW', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -1124,10 +1124,10 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * You accepted the given order. You may now show a confirmation or provide the link to the certificate.
-     * Process pending Order
+     * Process Pending Order
      * @param processOrder 
      * @param orderId The order id specified in the Order
-     * @param X_LOCALE 
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async process(processOrder: ProcessOrder, orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -1186,12 +1186,12 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * 
-     * Process cart
+     * Process a given cart to offset the cart\'s emissions
+     * Process Cart
      * @param processOrder 
-     * @param storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+     * @param storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
      * @param orderId The order id specified in the Order
-     * @param X_LOCALE 
+     * @param X_LOCALE The locale in which the response should be returned
      */
     public async processCart(processOrder: ProcessOrder, storeIdent: string, orderId: string, X_LOCALE?: 'DE' | 'EN' | 'ES' | 'FR' | 'IT' | 'NL' | 'PL' | 'PT' | 'SV' | 'SL' | 'FI' | 'BG' | 'CS' | 'DA' | 'EL' | 'ET' | 'HU' | 'LT' | 'LV' | 'RO' | 'SK', _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -1346,7 +1346,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
      * Use the method to sync multiple products from the given store to our database.
      * Sync multiple Products
      * @param product 
-     * @param storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+     * @param storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
      */
     public async syncBulkStore(product: Array<Product>, storeIdent: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -1402,7 +1402,7 @@ export class KlimApiRequestFactory extends BaseAPIRequestFactory {
      * Use the method to sync a single product from the given store to our database.
      * Sync a single Product
      * @param product 
-     * @param storeIdent Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+     * @param storeIdent Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
      */
     public async syncStore(product: Product, storeIdent: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -2011,7 +2011,7 @@ export class KlimApiResponseProcessor {
             throw new ApiException<undefined>(response.httpStatusCode, "Your API Key is invalid, deactivated or your account has been suspended", undefined, response.headers);
         }
         if (isCodeInRange("406", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "The Request exceeds the given &lt;code&gt;price_limit&lt;/code&gt;", undefined, response.headers);
+            throw new ApiException<undefined>(response.httpStatusCode, "The Request exceeds the given &#x60;price_limit&#x60;", undefined, response.headers);
         }
         if (isCodeInRange("422", response.httpStatusCode)) {
             throw new ApiException<undefined>(response.httpStatusCode, "Unknown calculation parameter", undefined, response.headers);
@@ -2055,7 +2055,7 @@ export class KlimApiResponseProcessor {
             throw new ApiException<undefined>(response.httpStatusCode, "Your API Key is invalid, deactivated or your account has been suspended", undefined, response.headers);
         }
         if (isCodeInRange("406", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "The Request exceeds the given &lt;code&gt;price_limit&lt;/code&gt;", undefined, response.headers);
+            throw new ApiException<undefined>(response.httpStatusCode, "The Request exceeds the given &#x60;price_limit&#x60;", undefined, response.headers);
         }
         if (isCodeInRange("503", response.httpStatusCode)) {
             throw new ApiException<undefined>(response.httpStatusCode, "Order exceeds default stock limit. Contact us for larger orders and to increase the inventory limit for your API requests", undefined, response.headers);
